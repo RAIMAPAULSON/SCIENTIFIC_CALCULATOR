@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100..900;1,100..900&family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
+    <title>Calculator</title>
+    <script src=
+    "https://cdnjs.cloudflare.com/ajax/libs/mathjs/10.6.4/math.js"
+                integrity=
+    "sha512-BbVEDjbqdN3Eow8+empLMrJlxXRj5nEitiCAK5A1pUr66+jLVejo3PmjIaucRnjlB0P9R3rBUs3g5jXc8ti+fQ=="
+                crossorigin="anonymous"
+                referrerpolicy="no-referrer">
+          </script>
+</head>
+<body >
+    <h1 class="mt-3 bitter">CALCULATOR</h1>
+    <div class="container bg-dark " id="main">
+     <div class="pt-3">
+        <input id="calcScreen" type="text" class="form-control mt-2"  placeholder="0" readonly>
+     </div>
+     <div class="row first mt-3">
+        <div class="col"><button type="button" class="btn btn-outline-secondary text-info" id="button1" onclick="power()">x<sup>^</sup></button></div>
+        <div class="col"><button type="button" class="btn btn-outline-secondary text-info" id="button2" onclick="pi()">𝝅</button></div>
+        <div class="col"><button type="button" class="btn btn-outline-secondary text-info" id="button3" onclick=" e()">e</button></div>
+        <div class="col"><button type="button" class="btn btn-outline-secondary text-warning" id="button4" onclick="displayContent('.')">.</button></div>
+        <div class="col"><button type="button" class="btn btn-outline-secondary text-danger" id="button5" onclick="removeLast()">⌫</button></div>
+    </div>
+    <div class="row second">
+        <div class="col"><button type="button" class="btn btn-outline-secondary text-info" id="button6" onclick="displayContent('!')">x!</button></div>
+        <div class="col"><button type="button" class="btn btn-outline-secondary text-info" id="button7" onclick="squareRoot()">√</button></div>
+        <div class="col"><button type="button" class="btn btn-outline-secondary text-warning" id="button8" onclick="displayContent('(')">(</button></div>
+        <div class="col"><button type="button" class="btn btn-outline-secondary text-warning" id="button9" onclick="displayContent(')')">)</button></div>
+        <div class="col"><button type="button" class="btn btn-outline-secondary text-warning" id="button10" onclick="displayContent('%')">%</button></div>
+    </div>
+
+    <div class="row third">
+        <div class="col"><button type="button" class="btn btn-outline-secondary text-success" id="button11" onclick="base10Log()">log</button></div>
+        <div class="col "><button type="button" class="btn btn-outline-secondary" id="button12" onclick="displayContent('7')">7</button></div>
+        <div class="col "><button type="button" class="btn btn-outline-secondary" id="button13"  onclick="displayContent('8')">8</button></div>
+        <div class="col"><button type="button" class="btn btn-outline-secondary" id="button14"  onclick="displayContent('9')">9</button></div>
+        <div class="col"><button type="button" class="btn btn-outline-secondary text-warning" id="button15"  onclick="displayContent('*')">x</button></div>
+    </div>
+    <div class="row fourth">
+        <div class="col"><button type="button" class="btn btn-outline-secondary text-success" id="button16" onclick="calcScreen.value += 'sin('">sin</button></div>
+        <div class="col"><button type="button" class="btn btn-outline-secondary" id="button17" onclick="displayContent('4')">4</button></div>
+        <div class="col"><button type="button" class="btn btn-outline-secondary" id="button18" onclick="displayContent('5')">5</button></div>
+        <div class="col"><button type="button" class="btn btn-outline-secondary" id="button19"onclick="displayContent('6')">6</button></div>
+        <div class="col"><button type="button" class="btn btn-outline-secondary text-warning" id="button20" onclick="displayContent('-')">-</button></div>
+    </div>
+    <div class="row fifth">
+        <div class="col"><button type="button" class="btn btn-outline-secondary text-success" id="button21" onclick="calcScreen.value += 'cos('">cos</button></div>
+        <div class="col"><button type="button" class="btn btn-outline-secondary" id="button22" onclick="displayContent('1')">1</button></div>
+        <div class="col"><button type="button" class="btn btn-outline-secondary" id="button23" onclick="displayContent('2')">2</button></div>
+        <div class="col"><button type="button" class="btn btn-outline-secondary" id="button24" onclick="displayContent('3')">3</button></div>
+        <div class="col"><button type="button" class="btn btn-outline-secondary text-warning" id="button25" onclick="displayContent('+')">+</button></div>
+    </div>
+    <div class="row  mb-4 sixth">
+        <div class="col"><button type="button" class="btn btn-outline-secondary text-success" id="button26" onclick="calcScreen.value += 'tan('">tan</button></div>
+        <div class="col"><button type="button" class="btn btn-outline-secondary text-warning" id="button27" onclick="displayContent('/')">÷</button></div>
+        <div class="col"><button type="button" class="btn btn-outline-secondary" id="button28" onclick="displayContent('0')">0</button></div>
+        <div class="col"><button type="button" class="btn btn-outline-secondary text-danger" id="button29" onclick="clearAllContent()">AC</button></div>
+        <div class="col"><button type="button" class="btn btn-outline-secondary" id="button30" onclick="displayResult()">=</button></div>
+    </div>
+    </div>
+</body>
+<script src="./main.js"></script>
+</html>
